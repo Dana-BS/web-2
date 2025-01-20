@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9fff8;
+            background-color: #f2f9f1; /* Light greenish background */
             color: #333;
             margin: 0;
             padding: 0;
@@ -16,37 +16,44 @@
         .form-container {
             background-color: white;
             border-radius: 10px;
-            padding: 20px;
-            max-width: 400px;
-            margin: 40px auto;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            max-width: 500px;
+            margin: 50px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #8bca84;
         }
 
         .form-container h2 {
             text-align: center;
             color: #8bca84;
+            font-size: 1.8rem;
             margin-bottom: 20px;
         }
 
         label {
             display: block;
             margin: 10px 0 5px;
+            font-weight: bold;
         }
 
-        input[type="text"], input[type="number"], input[type="submit"] {
+        input[type="text"], 
+        input[type="number"], 
+        input[type="submit"], 
+        select {
             width: 100%;
             padding: 10px;
-            margin: 5px 0;
-            box-sizing: border-box;
+            margin: 5px 0 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
         }
 
-        .checkbox-group {
-            margin: 10px ;
+        .radio-group, .checkbox-group {
+            margin: 10px 0;
         }
 
-        input[type="radio"] {
+        input[type="radio"], input[type="checkbox"] {
             margin-right: 5px;
         }
 
@@ -55,30 +62,46 @@
             color: white;
             border: none;
             cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #74ad6e;
+            background-color: #74b070;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <h2>Prescribe Medications</h2>
-        <form action="Doctor'sHomePage.html" method="post">
+        <h2>Prescribe Medication</h2>
+        <form action="DoctorHomePage.html" method="post">
+            <!-- Pet Name -->
             <label for="pet-name">Pet's Name:</label>
-            <input type="text" id="pet-name" name="pet-name" value="Bella" readonly>
+            <input type="text" id="pet-name" name="pet-name" placeholder="Enter pet's name" required>
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" value="3" readonly>
+            <!-- Pet Age -->
+            <label for="age">Age (in years):</label>
+            <input type="number" id="age" name="age" min="0" placeholder="Enter pet's age" required>
 
+            <!-- Species -->
             <label>Species:</label>
-            <input type="radio" id="dog" name="species" value="Dog" >
-            <label for="dog">Dog</label>
-            <input type="radio" id="cat" name="species" value="Cat">
-            <label for="cat">Cat</label>
+            <div class="radio-group">
+                <input type="radio" id="dog" name="species" value="Dog" checked>
+                <label for="dog" style="display: inline;">Dog</label>
+                <input type="radio" id="cat" name="species" value="Cat">
+                <label for="cat" style="display: inline;">Cat</label>
+                <input type="radio" id="rabbit" name="species" value="Rabbit">
+                <label for="rabbit" style="display: inline;">Rabbit</label>
+            </div>
 
+            <!-- Medications -->
             <label>Medications:</label>
             <div class="checkbox-group">
                 <input type="checkbox" id="aspirin" name="medications" value="Aspirin">
@@ -91,7 +114,8 @@
                 <label for="antibiotics">Antibiotics</label>
             </div>
 
-            <input type="submit" value="Submit">
+            <!-- Submit Button -->
+            <input type="submit" value="Prescribe">
         </form>
     </div>
 </body>
