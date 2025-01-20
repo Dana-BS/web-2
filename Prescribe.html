@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescribe Medication</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9fff8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 40px auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #8bca84;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"], input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .checkbox-group {
+            margin: 10px ;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #8bca84;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #74ad6e;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Prescribe Medications</h2>
+        <form action="Doctor'sHomePage.html" method="post">
+            <label for="pet-name">Pet's Name:</label>
+            <input type="text" id="pet-name" name="pet-name" value="Bella" readonly>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" value="3" readonly>
+
+            <label>Species:</label>
+            <input type="radio" id="dog" name="species" value="Dog" >
+            <label for="dog">Dog</label>
+            <input type="radio" id="cat" name="species" value="Cat">
+            <label for="cat">Cat</label>
+
+            <label>Medications:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="aspirin" name="medications" value="Aspirin">
+                <label for="aspirin">Aspirin</label>
+                <input type="checkbox" id="ibuprofen" name="medications" value="Ibuprofen">
+                <label for="ibuprofen">Ibuprofen</label>
+                <input type="checkbox" id="paracetamol" name="medications" value="Paracetamol">
+                <label for="paracetamol">Paracetamol</label>
+                <input type="checkbox" id="antibiotics" name="medications" value="Antibiotics">
+                <label for="antibiotics">Antibiotics</label>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
