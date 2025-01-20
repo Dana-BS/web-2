@@ -13,6 +13,21 @@
             padding: 0;
             
         }
+        .welcome-container {
+   
+    margin: 20px auto; 
+    max-width: 900px;
+}
+        
+        .welcome-label {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-right: 20px; /* Space between the label and the section */
+    white-space: nowrap; 
+}
+
+
 
         header {
             background-color: #8bca84;
@@ -44,6 +59,7 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          
         }
 
         section h2 {
@@ -103,13 +119,13 @@
         <a href="#">Log out</a>
         <h1>Clinic</h1>
     </header>
-    <div>
-        <label>Welcome Dr. [Name]</label>
-        <section>
-           
+    <div class="welcome-container">
+        <label for="veterinarian-details" class="welcome-label">Welcome Dr. [Name]</label>
+
+        <section id="veterinarian-details">
+            <h2>Veterinarian Information</h2>
             <div>[Veterinarian Details]</div>
         </section>
-    
     </div>
     
     <section>
