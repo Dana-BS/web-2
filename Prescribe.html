@@ -38,8 +38,7 @@
 
         input[type="text"], 
         input[type="number"], 
-        input[type="submit"], 
-        select {
+        input[type="submit"] {
             width: 100%;
             padding: 10px;
             margin: 5px 0 15px;
@@ -50,11 +49,19 @@
         }
 
         .radio-group, .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
             margin: 10px 0;
         }
 
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            align-items: center;
+        }
+
         input[type="radio"], input[type="checkbox"] {
-            margin-right: 5px;
+            margin-right: 8px;
         }
 
         input[type="submit"] {
@@ -71,51 +78,57 @@
         input[type="submit"]:hover {
             background-color: #74b070;
         }
-
-        .checkbox-group label {
-            display: block;
-            margin: 5px 0;
-        }
     </style>
 </head>
 <body>
     <div class="form-container">
         <h2>Prescribe Medication</h2>
-        <form action="DoctorHomePage.html" method="post">
+        <form action="Doctor'sHomePage.html" method="post">
             <!-- Pet Name -->
             <label for="pet-name">Pet's Name:</label>
             <input type="text" id="pet-name" name="pet-name" placeholder="Enter pet's name" required>
 
             <!-- Pet Age -->
-            <label for="age">Age (in years):</label>
+            <label for="age">Age (in months):</label>
             <input type="number" id="age" name="age" min="0" placeholder="Enter pet's age" required>
 
             <!-- Species -->
             <label>Species:</label>
             <div class="radio-group">
-                <input type="radio" id="dog" name="species" value="Dog" checked>
-                <label for="dog" style="display: inline;">Dog</label>
-                <input type="radio" id="cat" name="species" value="Cat">
-                <label for="cat" style="display: inline;">Cat</label>
-                <input type="radio" id="rabbit" name="species" value="Rabbit">
-                <label for="rabbit" style="display: inline;">Rabbit</label>
+                <label>
+                    <input type="radio" id="dog" name="species" value="Dog" checked>
+                    Dog
+                </label>
+                <label>
+                    <input type="radio" id="cat" name="species" value="Cat">
+                    Cat
+                </label>
+               
             </div>
 
             <!-- Medications -->
             <label>Medications:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="aspirin" name="medications" value="Aspirin">
-                <label for="aspirin">Aspirin</label>
-                <input type="checkbox" id="ibuprofen" name="medications" value="Ibuprofen">
-                <label for="ibuprofen">Ibuprofen</label>
-                <input type="checkbox" id="paracetamol" name="medications" value="Paracetamol">
-                <label for="paracetamol">Paracetamol</label>
-                <input type="checkbox" id="antibiotics" name="medications" value="Antibiotics">
-                <label for="antibiotics">Antibiotics</label>
+                <label>
+                    <input type="checkbox" id="aspirin" name="medications" value="Aspirin">
+                    Aspirin
+                </label>
+                <label>
+                    <input type="checkbox" id="ibuprofen" name="medications" value="Ibuprofen">
+                    Ibuprofen
+                </label>
+                <label>
+                    <input type="checkbox" id="paracetamol" name="medications" value="Paracetamol">
+                    Paracetamol
+                </label>
+                <label>
+                    <input type="checkbox" id="antibiotics" name="medications" value="Antibiotics">
+                    Antibiotics
+                </label>
             </div>
 
             <!-- Submit Button -->
-            <input type="submit" value="Prescribe">
+            <input type="submit" >
         </form>
     </div>
 </body>
