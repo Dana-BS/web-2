@@ -89,19 +89,23 @@
             <input type="text" id="pet-name" name="pet-name" placeholder="Enter pet's name" required>
 
             <!-- Pet Age -->
-            <label for="age">Age (in mont):</label>
+            <label for="age">Age (in montg):</label>
             <input type="number" id="age" name="age" min="0" placeholder="Enter pet's age" required>
 
             <!-- Species -->
             <label>Species:</label>
             <div class="radio-group">
                 <label>
-                    <input type="radio" id="dog" name="species" value="Dog" checked>
+                    <input type="radio" id="dog" name="species" value="Dog" >
                     Dog
                 </label>
                 <label>
                     <input type="radio" id="cat" name="species" value="Cat">
                     Cat
+                </label>
+                <label>
+                    <input type="radio" id="bird" name="species" value="Bird"> 
+                    Bird
                 </label>
                
             </div>
@@ -131,5 +135,35 @@
             <input type="submit" >
         </form>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Get pet data from sessionStorage
+            const petData = JSON.parse(sessionStorage.getItem('petData'));
+    
+            if (petData) {
+                // Fill in the form fields
+                document.getElementById("pet-name").value = petData.name || "";
+                document.getElementById("age").value = petData.age || "";
+    
+                // Select species
+                if (petData.species) {
+                    const species = petData.species.toLowerCase();
+                    const speciesRadio = document.getElementById(species);
+                    if (speciesRadio) speciesRadio.checked = true;
+                }
+    
+                // Check medications
+                if (petData.medications) {
+                    const medications = petData.medications.split(", ");
+                    medications.forEach(medication => {
+                        const checkbox = document.getElementById(medication.toLowerCase());
+                        if (checkbox) checkbox.checked = true;
+                    });
+                }
+            }
+        });
+    </script>
+    
 </body>
 </html>
