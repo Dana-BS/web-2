@@ -6,8 +6,9 @@
     <title>Patient Homepage</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8fdf4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9fff8;
+            color: #333;
             margin: 0;
             padding: 0;
         }
@@ -33,71 +34,90 @@
             right: 20px; 
             top: 20px; 
         }
+
         .container {
             margin: 20px auto;
             width: 90%;
-            max-width: 1200px;
+            max-width: 900px;
         }
+
         .welcome {
             font-size: 1.5em;
-            color: #4a4a4a;
-            margin-bottom: 10px;
-        }
-        .patient-info {
-            background-color: #eaf8ea;
-            padding: 15px;
-            border-radius: 8px;
+            font-weight: bold;
+            color: #333;
             margin-bottom: 20px;
         }
+
+        .patient-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .table-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        th, td {
+
+        table, th, td {
             border: 1px solid #ddd;
+        }
+
+        th, td {
             padding: 10px;
-            text-align: center;
+            text-align: left;
         }
+
         th {
-            background-color: #d9f2d9;
-            color: #4a4a4a;
+            background-color: #8bca84;
+            color: white;
         }
-        .table-section {
-            background-color: #eaf8ea;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+
+        .btn {
+            background-color: #8bca84;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9em;
+            text-decoration: none;
         }
-        .doctor-photo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+
+        .btn:hover {
+            background-color: #74ad6e;
         }
+
         a {
-            color: #4a90e2;
+            color: #8bca84;
             text-decoration: none;
             font-weight: bold;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         footer {
             text-align: center;
             margin-top: 20px;
         }
-        .btn {
-            background-color: #80c683;
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 0.9em;
-        }
-        .btn:hover {
-            background-color: #6db16b;
+
+        .doctor-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -114,7 +134,7 @@
         </div>
 
         <div class="patient-info">
-            <strong>Patient Information:</strong>
+            <h2>Patient Information</h2>
             <ul>
                 <li>Name: [Patient Name]</li>
                 <li>Email: [Patient Email]</li>
@@ -157,10 +177,6 @@
                 </tbody>
             </table>
         </div>
-
-        <footer>
-            <a href="index.html" class="btn">Log out</a>
-        </footer>
     </div>
 </body>
 </html>
