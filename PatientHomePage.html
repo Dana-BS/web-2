@@ -12,10 +12,26 @@
             padding: 0;
         }
         header {
-            background-color: #80c683;
+            background-color: #8bca84;
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            position: absolute; 
+            right: 20px; 
+            top: 20px; 
         }
         .container {
             margin: 20px auto;
@@ -86,7 +102,9 @@
     </style>
 </head>
 <body>
+    
     <header>
+        <a href="#">Log out</a>
         <h1>Clinic</h1>
     </header>
 
