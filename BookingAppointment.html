@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fdf4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #80c683;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            background-color: #eaf8ea;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #4a4a4a;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a4a4a;
+            font-weight: bold;
+        }
+        select, input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: none;
+        }
+        .btn {
+            background-color: #80c683;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #6db16b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book an Appointment</h1>
+    </header>
+
+    <div class="container">
+        <h2>Select Specialty</h2>
+        <form action="#">
+            <label for="specialty">Select Specialty:</label>
+            <select id="specialty" name="specialty">
+                <option value="cardiology">Cardiology</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="orthopedics">Orthopedics</option>
+                <!-- Add more specialties as needed -->
+            </select>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+
+        <h2>Appointment Details</h2>
+        <form action="homepage.html">
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor" name="doctor">
+                <option value="dr_sara">Dr. Sara Ahmad</option>
+                <option value="dr_saleh">Dr. Saleh Abdullah</option>
+                <!-- Dynamic options based on selected specialty -->
+            </select>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="reason">Reason for Visit:</label>
+            <textarea id="reason" name="reason" rows="4" placeholder="Enter reason for visit"></textarea>
+
+            <button type="submit" class="btn">Submit Booking</button>
+        </form>
+    </div>
+</body>
+</html>
