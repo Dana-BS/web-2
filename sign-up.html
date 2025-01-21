@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9fff8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #8bca84;
+            margin-top: 30px;
+        }
+
+        .form-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #8bca84;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #74ad6e;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .role-selection {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .role-button {
+            background-color: #8bca84;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .role-button:hover {
+            background-color: #74ad6e;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sign-Up Page</h1>
+
+    <!-- Role Selection -->
+    <div class="role-selection">
+        <button class="role-button" onclick="showForm('patient')">Sign Up as Patient</button>
+        <button class="role-button" onclick="showForm('doctor')">Sign Up as Doctor</button>
+    </div>
+
+    <!-- Patient Form -->
+    <div id="patient-form" class="form-container hidden">
+        <h2>Patient Sign-Up</h2>
+        <form action="patient-homepage.html">
+            <label for="patient-first-name">First Name:</label>
+            <input type="text" id="patient-first-name" name="first_name" required>
+            
+            <label for="patient-last-name">Last Name:</label>
+            <input type="text" id="patient-last-name" name="last_name" required>
+            
+            <label for="patient-id">ID:</label>
+            <input type="text" id="patient-id" name="id" required>
+            
+            <label for="patient-gender">Gender:</label>
+            <select id="patient-gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            
+            <label for="patient-dob">Date of Birth:</label>
+            <input type="date" id="patient-dob" name="dob" required>
+            
+            <label for="patient-email">Email Address:</label>
+            <input type="email" id="patient-email" name="email" required>
+            
+            <label for="patient-password">Password:</label>
+            <input type="password" id="patient-password" name="password" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Doctor Form -->
+    <div id="doctor-form" class="form-container hidden">
+        <h2>Doctor Sign-Up</h2>
+        <form action="Doctor'shomepage.html">
+            <label for="doctor-first-name">First Name:</label>
+            <input type="text" id="doctor-first-name" name="first_name" required>
+            
+            <label for="doctor-last-name">Last Name:</label>
+            <input type="text" id="doctor-last-name" name="last_name" required>
+            
+            <label for="doctor-id">ID:</label>
+            <input type="text" id="doctor-id" name="id" required>
+            
+            <label for="doctor-photo">Photo:</label>
+            <input type="file" id="doctor-photo" name="photo" accept="image/*" required>
+            
+            <label for="doctor-speciality">Speciality:</label>
+            <select id="doctor-speciality" name="speciality" required>
+                <option value="cardiology">Cardiology</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="general-medicine">General Medicine</option>
+                <option value="pediatrics">Pediatrics</option>
+            </select>
+            
+            <label for="doctor-email">Email Address:</label>
+            <input type="email" id="doctor-email" name="email" required>
+            
+            <label for="doctor-password">Password:</label>
+            <input type="password" id="doctor-password" name="password" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to show the appropriate form
+        function showForm(role) {
+            // Hide all forms
+            document.getElementById('patient-form').classList.add('hidden');
+            document.getElementById('doctor-form').classList.add('hidden');
+
+            // Show the selected form
+            if (role === 'patient') {
+                document.getElementById('patient-form').classList.remove('hidden');
+            } else if (role === 'doctor') {
+                document.getElementById('doctor-form').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
