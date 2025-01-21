@@ -7,7 +7,31 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #f8fdf4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #80c683;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .welcome {
+            font-size: 1.5em;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+        .patient-info {
+            background-color: #eaf8ea;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
         table {
             width: 100%;
@@ -16,86 +40,109 @@
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 10px;
             text-align: center;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #d9f2d9;
+            color: #4a4a4a;
         }
-        .welcome {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .patient-info {
+        .table-section {
+            background-color: #eaf8ea;
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 20px;
-        }
-        .links {
-            margin-top: 20px;
-        }
-        a {
-            color: blue;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
         }
         .doctor-photo {
             width: 50px;
             height: 50px;
             border-radius: 50%;
         }
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #80c683;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .btn:hover {
+            background-color: #6db16b;
+        }
     </style>
 </head>
 <body>
-    <div class="welcome">
-        Welcome, [name]
-    </div>
+    <header>
+        <h1>Clinic</h1>
+    </header>
 
-    <div class="patient-info">
-        <strong>Patient Information:</strong>
-        <ul>
-            <li>Name: [Patient Name]</li>
-            <li>Email: [Patient Email]</li>
-            <li>Phone: [Patient Phone]</li>
-            <!-- Add other information entered during sign up -->
-        </ul>
-    </div>
+    <div class="container">
+        <div class="welcome">
+            Welcome, [name]
+        </div>
 
-    <a href="book_appointment.html">Book an appointment</a>
+        <div class="patient-info">
+            <strong>Patient Information:</strong>
+            <ul>
+                <li>Name: [Patient Name]</li>
+                <li>Email: [Patient Email]</li>
+                <li>Phone: [Patient Phone]</li>
+                <!-- Add other information entered during sign up -->
+            </ul>
+        </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Time</th>
-                <th>Date</th>
-                <th>Doctor's Name</th>
-                <th>Doctor's Photo</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>3 PM</td>
-                <td>20/5/2025</td>
-                <td>Dr. Sara Ahmad</td>
-                <td><img src="sara_ahmad.jpg" alt="Dr. Sara Ahmad" class="doctor-photo"></td>
-                <td>Pending</td>
-                <td><a href="#">Cancel</a></td>
-            </tr>
-            <tr>
-                <td>10 AM</td>
-                <td>14/2/2025</td>
-                <td>Dr. Saleh Abdullah</td>
-                <td><img src="saleh_abdullah.jpg" alt="Dr. Saleh Abdullah" class="doctor-photo"></td>
-                <td>Confirmed</td>
-                <td><a href="#">Cancel</a></td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="table-section">
+            <a href="book_appointment.html" class="btn">Book an Appointment</a>
 
-    <div class="links">
-        <a href="index.html">Log out</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Date</th>
+                        <th>Doctor's Name</th>
+                        <th>Doctor's Photo</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3 PM</td>
+                        <td>20/5/2025</td>
+                        <td>Dr. Sara Ahmad</td>
+                        <td><img src="sara_ahmad.jpg" alt="Dr. Sara Ahmad" class="doctor-photo"></td>
+                        <td>Pending</td>
+                        <td><a href="#">Cancel</a></td>
+                    </tr>
+                    <tr>
+                        <td>10 AM</td>
+                        <td>14/2/2025</td>
+                        <td>Dr. Saleh Abdullah</td>
+                        <td><img src="saleh_abdullah.jpg" alt="Dr. Saleh Abdullah" class="doctor-photo"></td>
+                        <td>Confirmed</td>
+                        <td><a href="#">Cancel</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <a href="index.html" class="btn">Log out</a>
+        </footer>
     </div>
 </body>
 </html>
