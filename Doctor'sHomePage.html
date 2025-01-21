@@ -111,6 +111,23 @@
         a:hover {
             text-decoration: underline;
         }
+
+        .prescribe-button {
+    background: none; /* No background */
+    border: none; /* Remove border */
+    color: #4caf50; /* Professional green color */
+    font-size: 1rem; /* Standard text size */
+    font-weight: bold; /* Make it stand out slightly */
+    text-decoration: underline; /* Add underline to mimic a link */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    padding: 0; /* Remove padding for a text-like look */
+    transition: color 0.2s ease; /* Smooth color transition on hover */
+}
+
+.prescribe-button:hover {
+    color: #388e3c; /* Slightly darker green on hover */
+}
+
     </style>
 </head>
 <body>
@@ -215,19 +232,50 @@
                     <td>5</td>
                     <td>Dog</td>
                     <td>Antibiotics</td>
-                    <td><a href="Prescribe.html">Prescribe</a></td>
+                    <td><button class="prescribe-button">Prescribe</button></td>
                 </tr>
                 <tr>
                     <td>Fluffy</td>
                     <td>1</td>
-                    <td>Rabbit</td>
+                    <td>Bird</td>
                     <td>N/A</td>
-                    <td><a href="Prescribe.html">Prescribe</a></td>
+                    <td><button class="prescribe-button">Prescribe</button></td>
+                </tr>
+                <tr>
+                    <td>Skyler</td>
+                    <td>9</td>
+                    <td>Cat</td>
+                    <td>Paracetamol</td>
+                    <td><button class="prescribe-button">Prescribe</button></td>
                 </tr>
             </tbody>
         </table>
     </section>
 
+<<<<<<< HEAD
     
+=======
+    <script>
+        // Add event listeners to all prescribe buttons
+        document.querySelectorAll('.prescribe-button').forEach(button => {
+            button.addEventListener('click', function () {
+                // Find the row of the clicked button
+                const row = this.closest('tr');
+                const petData = {
+                    name: row.cells[0].textContent.trim(),
+                    age: row.cells[1].textContent.trim(),
+                    species: row.cells[2].textContent.trim(),
+                    medications: row.cells[3].textContent.trim(),
+                };
+    
+                // Store the data in sessionStorage
+                sessionStorage.setItem('petData', JSON.stringify(petData));
+    
+                // Redirect to the Prescribe Medication page
+                window.location.href = 'Prescribe.html';
+            });
+        });
+    </script>
+>>>>>>> ee1bf468e86ca87d003c826e5c985cf4e9aba8ff
 </body>
 </html>
