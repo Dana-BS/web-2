@@ -114,6 +114,39 @@
     </style>
 </head>
 <body>
+    <script>
+        
+        const doctorData = {
+            firstName: "John",
+            lastName: "Doe",
+            id: "12345",
+            photo: "https://via.placeholder.com/100",
+            specialty: "Veterinarian",
+            email: "johndoe@example.com"
+        };
+
+        // Save doctor data to local storage (this would usually be done during sign-up)
+        localStorage.setItem("doctorData", JSON.stringify(doctorData));
+
+        // Load and display doctor information
+        const storedDoctorData = JSON.parse(localStorage.getItem("doctorData"));
+        if (storedDoctorData) {
+            // Set the welcome name
+            document.getElementById("doctorName").innerText = storedDoctorData.firstName + " " + storedDoctorData.lastName;
+
+            // Populate the information section
+            const doctorInfoDiv = document.getElementById("doctorInfo");
+            doctorInfoDiv.innerHTML = `
+                <img src="${storedDoctorData.photo}" alt="Doctor's Photo" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px;">
+                <p><span>ID:</span> ${storedDoctorData.id}</p>
+                <p><span>Specialty:</span> ${storedDoctorData.specialty}</p>
+                <p><span>Email:</span> ${storedDoctorData.email}</p>
+            `;
+        } else {
+            // Handle the case where no data is available
+            document.getElementById("doctorInfo").innerText = "No doctor information available.";
+        }
+    </script>
     
     <header>
         <a href="#">Log out</a>
@@ -194,5 +227,7 @@
             </tbody>
         </table>
     </section>
+
+    
 </body>
 </html>
