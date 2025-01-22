@@ -156,24 +156,34 @@
     </div>
 
     <script>
-        // Add event listener to Doctor Sign-Up form
-        document.getElementById('doctorSignupForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent form from submitting
-            
+        // Function to show the appropriate form
+        function showForm(role) {
+            document.getElementById('patient-form').classList.add('hidden');
+            document.getElementById('doctor-form').classList.add('hidden');
+
+            if (role === 'patient') {
+                document.getElementById('patient-form').classList.remove('hidden');
+            } else if (role === 'doctor') {
+                document.getElementById('doctor-form').classList.remove('hidden');
+            }
+        }
+
+        // Handle Doctor Form Submission
+        document.getElementById('doctorForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent actual form submission
+
             const doctorData = {
                 firstName: document.getElementById('doctor-first-name').value,
                 lastName: document.getElementById('doctor-last-name').value,
                 id: document.getElementById('doctor-id').value,
-                photo: document.getElementById('doctor-photo').files[0]
-                    ? URL.createObjectURL(document.getElementById('doctor-photo').files[0])
-                    : "",
+                photo: document.getElementById('doctor-photo').value,
                 speciality: document.getElementById('doctor-speciality').value,
                 email: document.getElementById('doctor-email').value,
             };
-    
-            // Save doctor data to localStorage
+
+            // Save to localStorage
             localStorage.setItem('doctorData', JSON.stringify(doctorData));
-    
+
             // Redirect to the Doctor's Homepage
             window.location.href = "Doctor'shomepage.html";
         });
