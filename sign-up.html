@@ -92,30 +92,30 @@
     <!-- Patient Form -->
     <div id="patient-form" class="form-container hidden">
         <h2>Patient Sign-Up</h2>
-        <form action="patient-homepage.html">
+        <form id="patientForm">
             <label for="patient-first-name">First Name:</label>
-            <input type="text" id="patient-first-name" name="first_name" required>
+            <input type="text" id="patient-first-name" required>
             
             <label for="patient-last-name">Last Name:</label>
-            <input type="text" id="patient-last-name" name="last_name" required>
+            <input type="text" id="patient-last-name" required>
             
             <label for="patient-id">ID:</label>
-            <input type="text" id="patient-id" name="id" required>
+            <input type="text" id="patient-id" required>
             
             <label for="patient-gender">Gender:</label>
-            <select id="patient-gender" name="gender" required>
+            <select id="patient-gender" required>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
             
             <label for="patient-dob">Date of Birth:</label>
-            <input type="date" id="patient-dob" name="dob" required>
+            <input type="date" id="patient-dob" required>
             
             <label for="patient-email">Email Address:</label>
-            <input type="email" id="patient-email" name="email" required>
+            <input type="email" id="patient-email" required>
             
             <label for="patient-password">Password:</label>
-            <input type="password" id="patient-password" name="password" required>
+            <input type="password" id="patient-password" required>
             
             <button type="submit">Submit</button>
         </form>
@@ -124,21 +124,21 @@
     <!-- Doctor Form -->
     <div id="doctor-form" class="form-container hidden">
         <h2>Doctor Sign-Up</h2>
-        <form action="Doctor'shomepage.html">
+        <form id="doctorForm">
             <label for="doctor-first-name">First Name:</label>
-            <input type="text" id="doctor-first-name" name="first_name" required>
+            <input type="text" id="doctor-first-name" required>
             
             <label for="doctor-last-name">Last Name:</label>
-            <input type="text" id="doctor-last-name" name="last_name" required>
+            <input type="text" id="doctor-last-name" required>
             
             <label for="doctor-id">ID:</label>
-            <input type="text" id="doctor-id" name="id" required>
+            <input type="text" id="doctor-id" required>
             
-            <label for="doctor-photo">Photo:</label>
-            <input type="file" id="doctor-photo" name="photo" accept="image/*" required>
+            <label for="doctor-photo">Photo URL:</label>
+            <input type="url" id="doctor-photo" placeholder="https://example.com/photo.jpg" required>
             
             <label for="doctor-speciality">Speciality:</label>
-            <select id="doctor-speciality" name="speciality" required>
+            <select id="doctor-speciality" required>
                 <option value="cardiology">Cardiology</option>
                 <option value="dermatology">Dermatology</option>
                 <option value="general-medicine">General Medicine</option>
@@ -146,29 +146,37 @@
             </select>
             
             <label for="doctor-email">Email Address:</label>
-            <input type="email" id="doctor-email" name="email" required>
+            <input type="email" id="doctor-email" required>
             
             <label for="doctor-password">Password:</label>
-            <input type="password" id="doctor-password" name="password" required>
+            <input type="password" id="doctor-password" required>
             
             <button type="submit">Submit</button>
         </form>
     </div>
 
     <script>
-        // Function to show the appropriate form
-        function showForm(role) {
-            // Hide all forms
-            document.getElementById('patient-form').classList.add('hidden');
-            document.getElementById('doctor-form').classList.add('hidden');
-
-            // Show the selected form
-            if (role === 'patient') {
-                document.getElementById('patient-form').classList.remove('hidden');
-            } else if (role === 'doctor') {
-                document.getElementById('doctor-form').classList.remove('hidden');
-            }
-        }
+        // Add event listener to Doctor Sign-Up form
+        document.getElementById('doctorSignupForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form from submitting
+            
+            const doctorData = {
+                firstName: document.getElementById('doctor-first-name').value,
+                lastName: document.getElementById('doctor-last-name').value,
+                id: document.getElementById('doctor-id').value,
+                photo: document.getElementById('doctor-photo').files[0]
+                    ? URL.createObjectURL(document.getElementById('doctor-photo').files[0])
+                    : "",
+                speciality: document.getElementById('doctor-speciality').value,
+                email: document.getElementById('doctor-email').value,
+            };
+    
+            // Save doctor data to localStorage
+            localStorage.setItem('doctorData', JSON.stringify(doctorData));
+    
+            // Redirect to the Doctor's Homepage
+            window.location.href = "Doctor'shomepage.html";
+        });
     </script>
 </body>
 </html>
