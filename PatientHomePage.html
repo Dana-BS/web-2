@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Homepage</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9fff8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #8bca84;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            position: absolute; 
+            right: 20px; 
+            top: 20px; 
+        }
+
+        .container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .welcome {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .patient-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .table-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #8bca84;
+            color: white;
+        }
+
+        .btn {
+            background-color: #8bca84;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #74ad6e;
+        }
+
+        a {
+            color: #8bca84;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .doctor-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        /* New styling to align the button to the right */
+        .btn-container {
+            text-align: right; /* Align the button to the right */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <a href="#">Log out</a>
+        <h1>Clinic</h1>
+    </header>
+
+    <div class="container">
+        <div class="welcome">
+            Welcome, [name]
+        </div>
+
+        <div class="patient-info">
+            <h2>Patient Information</h2>
+            <ul>
+                <li>Name: [Patient Name]</li>
+                <li>Email: [Patient Email]</li>
+                <li>ID: [Patient ID]</li>
+                <li>Date Of Birth: [Patient DOB]</li>
+                <li>Phone: [Patient Phone]</li>
+
+
+                <!-- Add other information entered during sign up -->
+            </ul>
+        </div>
+
+        <!-- Button Container to align the button to the right -->
+        <div class="btn-container">
+            <a href="book_appointment.html" class="btn">Book an Appointment</a>
+        </div>
+
+        <div class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Date</th>
+                        <th>Doctor's Name</th>
+                        <th>Doctor's Photo</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3 PM</td>
+                        <td>20/5/2025</td>
+                        <td>Dr. Sara Ahmad</td>
+                        <td><img src="doc1.png" alt="Dr. Sara Ahmad" class="doctor-photo"></td>
+                        <td>Pending</td>
+                        <td><a href="#">Cancel</a></td>
+                    </tr>
+                    <tr>
+                        <td>10 AM</td>
+                        <td>14/2/2025</td>
+                        <td>Dr. Saleh Abdullah</td>
+                        <td><img src="doc2.png" alt="Dr. Saleh Abdullah" class="doctor-photo"></td>
+                        <td>Confirmed</td>
+                        <td><a href="#">Cancel</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+

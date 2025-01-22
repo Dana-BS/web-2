@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor's Homepage</title>
+    <title>Pet Clinic Homepage</title>
     <style>
-        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f9fff8;
             color: #333;
             margin: 0;
             padding: 0;
+            
         }
+        .welcome-container {
+   
+    margin: 20px auto; 
+    max-width: 900px;
+}
+        
+        .welcome-label {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-right: 20px; /* Space between the label and the section */
+    white-space: nowrap; 
+}
+
+
 
         header {
             background-color: #8bca84;
@@ -32,22 +47,9 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-        }
-
-        .welcome-container {
-            margin: 20px auto;
-            max-width: 900px;
-        }
-
-        .welcome-label {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-            margin-right: 20px;
-            white-space: nowrap;
+            position: absolute; 
+            right: 20px; 
+            top: 20px; 
         }
 
         section {
@@ -57,21 +59,12 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          
         }
 
         section h2 {
             color: #8bca84;
             margin-top: 0;
-        }
-
-        img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
-
-        p {
-            margin: 5px 0;
         }
 
         table {
@@ -103,41 +96,88 @@
             border-radius: 5px;
             font-size: 0.9em;
         }
+
         .button:hover {
             background-color: #74ad6e;
         }
-        .prescribe-button {
-            background: none;
-            border: none;
-            color: #4caf50;
-            font-size: 1rem;
+
+        a {
+            color: #8bca84;
+            text-decoration: none;
             font-weight: bold;
+          
+        }
+
+        a:hover {
             text-decoration: underline;
-            cursor: pointer;
-            padding: 0;
-            transition: color 0.2s ease;
         }
-        .prescribe-button:hover {
-            color: #388e3c;
-        }
+
+        .prescribe-button {
+    background: none; /* No background */
+    border: none; /* Remove border */
+    color: #4caf50; /* Professional green color */
+    font-size: 1rem; /* Standard text size */
+    font-weight: bold; /* Make it stand out slightly */
+    text-decoration: underline; /* Add underline to mimic a link */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    padding: 0; /* Remove padding for a text-like look */
+    transition: color 0.2s ease; /* Smooth color transition on hover */
+}
+
+.prescribe-button:hover {
+    color: #388e3c; /* Slightly darker green on hover */
+}
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Doctor's Homepage</h1>
-        <a href="#">Log Out</a>
-    </header>
+    <script>
+        
+        const doctorData = {
+            firstName: "John",
+            lastName: "Doe",
+            id: "12345",
+            photo: "https://via.placeholder.com/100",
+            specialty: "Veterinarian",
+            email: "johndoe@example.com"
+        };
 
+        // Save doctor data to local storage (this would usually be done during sign-up)
+        localStorage.setItem("doctorData", JSON.stringify(doctorData));
+
+        // Load and display doctor information
+        const storedDoctorData = JSON.parse(localStorage.getItem("doctorData"));
+        if (storedDoctorData) {
+            // Set the welcome name
+            document.getElementById("doctorName").innerText = storedDoctorData.firstName + " " + storedDoctorData.lastName;
+
+            // Populate the information section
+            const doctorInfoDiv = document.getElementById("doctorInfo");
+            doctorInfoDiv.innerHTML = `
+                <img src="${storedDoctorData.photo}" alt="Doctor's Photo" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px;">
+                <p><span>ID:</span> ${storedDoctorData.id}</p>
+                <p><span>Specialty:</span> ${storedDoctorData.specialty}</p>
+                <p><span>Email:</span> ${storedDoctorData.email}</p>
+            `;
+        } else {
+            // Handle the case where no data is available
+            document.getElementById("doctorInfo").innerText = "No doctor information available.";
+        }
+    </script>
+    
+    <header>
+        <a href="#">Log out</a>
+        <h1>Clinic</h1>
+    </header>
     <div class="welcome-container">
-        <label class="welcome-label">Welcome Dr. <span id="doctorName"></span></label>
-        <section>
-            <h2>Doctor's Information</h2>
-            <div id="doctorInfo">
-                <!-- Doctor Information will be dynamically loaded here -->
-            </div>
+        <label for="veterinarian-details" class="welcome-label">Welcome Dr. [Name]</label>
+
+        <section id="veterinarian-details">
+            <h2>Veterinarian Information</h2>
+            <div>[Veterinarian Details]</div>
         </section>
     </div>
-
+    
     <section>
         <h2>Upcoming Appointments</h2>
         <table>
@@ -174,6 +214,7 @@
             </tbody>
         </table>
     </section>
+
     <section>
         <h2>Your Patients</h2>
         <table>
@@ -183,7 +224,6 @@
                     <th>Age</th>
                     <th>Species</th>
                     <th>Medications</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -211,44 +251,29 @@
             </tbody>
         </table>
     </section>
+
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load and display doctor data from localStorage
-            const doctorData = localStorage.getItem("doctorData");
-
-            if (doctorData) {
-                const doctor = JSON.parse(doctorData);
-
-                // Update doctor name
-                document.getElementById("doctorName").textContent = `${doctor.firstName} ${doctor.lastName}`;
-
-                // Update doctor information
-                const doctorInfoDiv = document.getElementById("doctorInfo");
-                doctorInfoDiv.innerHTML = `
-                    <img src="${doctor.photo}" alt="Doctor's Photo">
-                    <p><strong>ID:</strong> ${doctor.id}</p>
-                    <p><strong>Speciality:</strong> ${doctor.speciality}</p>
-                    <p><strong>Email:</strong> ${doctor.email}</p>
-                `;
-            } else {
-                document.getElementById("doctorInfo").innerHTML = "<p>No doctor information found. Please sign up first.</p>";
-            }
-        });
-
-         document.querySelectorAll('.prescribe-button').forEach(button => {
-                button.addEventListener('click', function () {
-                    const row = this.closest('tr');
-                    const petData = {
-                        name: row.cells[0].textContent.trim(),
-                        age: row.cells[1].textContent.trim(),
-                        species: row.cells[2].textContent.trim(),
-                        medications: row.cells[3].textContent.trim(),
-                    };
-                    sessionStorage.setItem('petData', JSON.stringify(petData));
-                    window.location.href = 'Prescribe.html';
-                });
+        // Add event listeners to all prescribe buttons
+        document.querySelectorAll('.prescribe-button').forEach(button => {
+            button.addEventListener('click', function () {
+                // Find the row of the clicked button
+                const row = this.closest('tr');
+                const petData = {
+                    name: row.cells[0].textContent.trim(),
+                    age: row.cells[1].textContent.trim(),
+                    species: row.cells[2].textContent.trim(),
+                    medications: row.cells[3].textContent.trim(),
+                };
+    
+                // Store the data in sessionStorage
+                sessionStorage.setItem('petData', JSON.stringify(petData));
+    
+                // Redirect to the Prescribe Medication page
+                window.location.href = 'Prescribe.html';
             });
-        
+        });
     </script>
+
 </body>
 </html>
