@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -112,64 +112,17 @@
         a:hover {
             text-decoration: underline;
         }
-
-        .prescribe-button {
-    background: none; /* No background */
-    border: none; /* Remove border */
-    color: #4caf50; /* Professional green color */
-    font-size: 1rem; /* Standard text size */
-    font-weight: bold; /* Make it stand out slightly */
-    text-decoration: underline; /* Add underline to mimic a link */
-    cursor: pointer; /* Pointer cursor for interactivity */
-    padding: 0; /* Remove padding for a text-like look */
-    transition: color 0.2s ease; /* Smooth color transition on hover */
-}
-
-.prescribe-button:hover {
-    color: #388e3c; /* Slightly darker green on hover */
-}
-
     </style>
 </head>
 <body>
-    <script>
-        
-        const doctorData = {
-            firstName: "John",
-            lastName: "Doe",
-            id: "12345",
-            photo: "https://via.placeholder.com/100",
-            specialty: "Veterinarian",
-            email: "johndoe@example.com"
-        };
-
-        // Save doctor data to local storage (this would usually be done during sign-up)
-        localStorage.setItem("doctorData", JSON.stringify(doctorData));
-
-        // Load and display doctor information
-        const storedDoctorData = JSON.parse(localStorage.getItem("doctorData"));
-        if (storedDoctorData) {
-            // Set the welcome name
-            document.getElementById("doctorName").innerText = storedDoctorData.firstName + " " + storedDoctorData.lastName;
-
-            // Populate the information section
-            const doctorInfoDiv = document.getElementById("doctorInfo");
-            doctorInfoDiv.innerHTML = `
-                <img src="${storedDoctorData.photo}" alt="Doctor's Photo" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px;">
-                <p><span>ID:</span> ${storedDoctorData.id}</p>
-                <p><span>Specialty:</span> ${storedDoctorData.specialty}</p>
-                <p><span>Email:</span> ${storedDoctorData.email}</p>
-            `;
-        } else {
-            // Handle the case where no data is available
-            document.getElementById("doctorInfo").innerText = "No doctor information available.";
-        }
-    </script>
     
     <header>
         <a href="#">Log out</a>
         <h1>Clinic</h1>
     </header>
+   
+        <section>
+           
     <div class="welcome-container">
         <label for="veterinarian-details" class="welcome-label">Welcome Dr. [Name]</label>
 
@@ -177,7 +130,8 @@
             <h2>Veterinarian Information</h2>
             <div>[Veterinarian Details]</div>
         </section>
-    </div>
+    
+  
     
     <section>
         <h2>Upcoming Appointments</h2>
@@ -233,48 +187,17 @@
                     <td>5</td>
                     <td>Dog</td>
                     <td>Antibiotics</td>
-                    <td><button class="prescribe-button">Prescribe</button></td>
+                    <td><a href="Prescribe.html">Prescribe</a></td>
                 </tr>
                 <tr>
                     <td>Fluffy</td>
                     <td>1</td>
-                    <td>Bird</td>
+                    <td>Rabbit</td>
                     <td>N/A</td>
-                    <td><button class="prescribe-button">Prescribe</button></td>
-                </tr>
-                <tr>
-                    <td>Skyler</td>
-                    <td>9</td>
-                    <td>Cat</td>
-                    <td>Paracetamol</td>
-                    <td><button class="prescribe-button">Prescribe</button></td>
+                    <td><a href="Prescribe.html">Prescribe</a></td>
                 </tr>
             </tbody>
         </table>
     </section>
-
-
-    <script>
-        // Add event listeners to all prescribe buttons
-        document.querySelectorAll('.prescribe-button').forEach(button => {
-            button.addEventListener('click', function () {
-                // Find the row of the clicked button
-                const row = this.closest('tr');
-                const petData = {
-                    name: row.cells[0].textContent.trim(),
-                    age: row.cells[1].textContent.trim(),
-                    species: row.cells[2].textContent.trim(),
-                    medications: row.cells[3].textContent.trim(),
-                };
-    
-                // Store the data in sessionStorage
-                sessionStorage.setItem('petData', JSON.stringify(petData));
-    
-                // Redirect to the Prescribe Medication page
-                window.location.href = 'Prescribe.html';
-            });
-        });
-    </script>
-
 </body>
 </html>
