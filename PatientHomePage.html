@@ -48,12 +48,47 @@
             margin-bottom: 20px;
         }
 
-        .patient-info {
+        .patient-info, .gallery {
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+        }
+
+        .gallery h2 {
+            text-align: left;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .gallery-images {
+            display: flex;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .gallery-images img {
+            width: 200px;
+            height: 150px;
+            margin-right: 10px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-200px * 4));
+            }
+        }
+
+        .scroll-container {
+            display: flex;
+            animation: scroll 10s linear infinite;
         }
 
         .table-section {
@@ -120,40 +155,52 @@
             border-radius: 50%;
         }
 
-        /* New styling to align the button to the right */
         .btn-container {
-            text-align: right; /* Align the button to the right */
+            text-align: right;
             margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    
     <header>
-        <a href="#">Log out</a>
+        <a href="homePage.html">Log out</a>
         <h1>Clinic</h1>
     </header>
 
     <div class="container">
         <div class="welcome">
-            Welcome, [name]
+            Welcome Skyler
         </div>
 
         <div class="patient-info">
             <h2>Patient Information</h2>
             <ul>
-                <li>Name: [Patient Name]</li>
-                <li>Email: [Patient Email]</li>
-                <li>ID: [Patient ID]</li>
-                <li>Date Of Birth: [Patient DOB]</li>
-                <li>Phone: [Patient Phone]</li>
-
-
-                <!-- Add other information entered during sign up -->
+                <li>Name: Skyler</li>
+                <li>Email: Skyler123@gmail.com</li>
+                <li>ID: 123456789 </li>
+                <li>Date Of Birth: 2020/3/12 </li>
+                <li>Phone: 0512567867 </li>
             </ul>
         </div>
 
-        <!-- Button Container to align the button to the right -->
+        <div class="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-images">
+                <div class="scroll-container">
+                    <img src="pet1.jpeg" alt="Image 1">
+                    <img src="pet2.png" alt="Image 2">
+                    <img src="pet3.jpeg" alt="Image 3">
+                    <img src="pet4.jpeg" alt="Image 4">
+                    <img src="pet1.jpeg" alt="Image 1">
+                    <img src="pet2.png" alt="Image 2">
+                    <img src="pet3.jpeg" alt="Image 3">
+                    <img src="pet4.jpeg" alt="Image 4">
+    
+    
+                </div>
+            </div>
+        </div>
+
         <div class="btn-container">
             <a href="book_appointment.html" class="btn">Book an Appointment</a>
         </div>
@@ -175,7 +222,7 @@
                         <td>3 PM</td>
                         <td>20/5/2025</td>
                         <td>Dr. Sara Ahmad</td>
-                        <td><img src="doc1.png" alt="Dr. Sara Ahmad" class="doctor-photo"></td>
+                        <td><img src="doc1.jpeg" alt="Dr. Sara Ahmad" class="doctor-photo"></td>
                         <td>Pending</td>
                         <td><a href="#">Cancel</a></td>
                     </tr>
@@ -183,7 +230,7 @@
                         <td>10 AM</td>
                         <td>14/2/2025</td>
                         <td>Dr. Saleh Abdullah</td>
-                        <td><img src="doc2.png" alt="Dr. Saleh Abdullah" class="doctor-photo"></td>
+                        <td><img src="doc2.jpeg" alt="Dr. Saleh Abdullah" class="doctor-photo"></td>
                         <td>Confirmed</td>
                         <td><a href="#">Cancel</a></td>
                     </tr>
@@ -193,4 +240,3 @@
     </div>
 </body>
 </html>
-
