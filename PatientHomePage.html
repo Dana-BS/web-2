@@ -53,7 +53,7 @@
             color: #333;
         }
         section {
-            margin: 30px auto; /* Add consistent spacing between sections */
+            margin: 30px auto;
             max-width: 900px;
             padding: 20px;
             border-radius: 10px;
@@ -76,7 +76,18 @@
         ul li {
             margin-bottom: 10px;
         }
-        .patient-info, .gallery {
+        .patient-info {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-image: url('foot.png'); /* Add the path to your cat footprint image */
+            background-repeat: no-repeat;
+            background-size: contain; /* Ensures the image fits nicely */
+            background-position: center;
+        }
+        .gallery {
             background-color: white;
             padding: 20px;
             border-radius: 10px;
@@ -118,17 +129,6 @@
             display: flex;
             animation: scroll 10s linear infinite;
         }
-        .gallery-images {
-            display: flex;
-            flex-wrap: wrap; /* Prevent overflow by wrapping images */
-            gap: 15px; /* Add space between images */
-        }
-        .gallery-images img {
-            width: calc(25% - 15px); /* Ensure images resize evenly within the container */
-            height: 150px;
-            border-radius: 10px;
-            object-fit: cover; /* Prevent stretching */
-        }
         .btn {
             background-color: #8bca84;
             color: white;
@@ -144,8 +144,8 @@
             background-color: #74ad6e;
         }
         .btn-container {
-            text-align: center; /* Center align the button */
-            margin: 30px 0; /* Add spacing for visual balance */
+            text-align: center;
+            margin: 30px 0;
         }
         table {
             width: 100%;
@@ -188,7 +188,7 @@
     <div class="welcome-container">
         <span class="welcome-label">Welcome Skyler</span>
     </div>
-    <section>
+    <section class="patient-info">
         <h2><i class="fas fa-user"></i> Patient Information</h2>
         <ul>
             <li><strong>Name:</strong> Skyler</li>
@@ -212,7 +212,6 @@
                     <img src="pet2.png" alt="Image 2">
                     <img src="pet3.jpeg" alt="Image 3">
                     <img src="pet4.jpeg" alt="Image 4">
-    
                 </div>
             </div>
         </div>
@@ -259,4 +258,6 @@
     </footer>
 </body>
 </html>
+
+
 
