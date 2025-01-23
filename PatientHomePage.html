@@ -76,6 +76,48 @@
         ul li {
             margin-bottom: 10px;
         }
+        .patient-info, .gallery {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .gallery h2 {
+            text-align: left;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .gallery-images {
+            display: flex;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .gallery-images img {
+            width: 200px;
+            height: 150px;
+            margin-right: 10px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-200px * 4));
+            }
+        }
+
+        .scroll-container {
+            display: flex;
+            animation: scroll 10s linear infinite;
+        }
         .gallery-images {
             display: flex;
             flex-wrap: wrap; /* Prevent overflow by wrapping images */
@@ -156,20 +198,31 @@
             <li><strong>Phone:</strong> 0512567867</li>
         </ul>
     </section>
+    
     <section>
         <h2><i class="fas fa-image"></i> Gallery</h2>
-        <div class="gallery-images">
-            <img src="pet1.jpeg" alt="Image 1">
-            <img src="pet2.png" alt="Image 2">
-            <img src="pet3.jpeg" alt="Image 3">
-            <img src="pet4.jpeg" alt="Image 4">
+        <div class="gallery">
+            <div class="gallery-images">
+                <div class="scroll-container">
+                    <img src="pet1.jpeg" alt="Image 1">
+                    <img src="pet2.png" alt="Image 2">
+                    <img src="pet3.jpeg" alt="Image 3">
+                    <img src="pet4.jpeg" alt="Image 4">
+                    <img src="pet1.jpeg" alt="Image 1">
+                    <img src="pet2.png" alt="Image 2">
+                    <img src="pet3.jpeg" alt="Image 3">
+                    <img src="pet4.jpeg" alt="Image 4">
+    
+                </div>
+            </div>
         </div>
     </section>
+
     <div class="btn-container">
         <a href="book_appointment.html" class="btn">Book an Appointment</a>
     </div>
     <section>
-        <h2><i class="fas fa-user-md"></i> Available Doctor</h2>
+        <h2><i class="fas fa-user-md"></i> Appointment History</h2>
         <table>
             <thead>
                 <tr>
