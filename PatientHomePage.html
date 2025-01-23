@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -23,7 +26,8 @@
 
         header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         header a {
@@ -41,11 +45,22 @@
             max-width: 900px;
         }
 
-        .welcome {
+        .welcome-container {
+            margin: 20px auto;
+            max-width: 900px;
+            display: flex;
+            align-items: center;
+        }
+        .welcome-container img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .welcome-label {
             font-size: 1.5em;
             font-weight: bold;
             color: #333;
-            margin-bottom: 20px;
         }
 
         .patient-info, .gallery {
@@ -180,23 +195,23 @@
         <a href="homePage.html">Log out</a>
         <h1>Clinic</h1>
     </header>
+    <div class="welcome-container">
+        <span class="welcome-label"> Welcome Skyler </span>
+    </div>
+    
+    <section>
+        <h2><i class="patient-info"></i> Patient Information</h2>
+        <ul>
+            <li><strong>Name:</strong> Skyler</li>
+            <li><strong>Email:</strong> Skyler123@gmail.com</li>
+            <li><strong>ID:</strong> 123456789</li>
+            <li><strong>Date Of Birth:</strong> 2020/3/12</li>
+            <li><strong>Phone:</strong> 0512567867</li>
 
-    <div class="container">
-        <div class="welcome">
-            Welcome Skyler
-        </div>
+        </ul>
+    </section>
 
-        <div class="patient-info">
-            <h2>Patient Information</h2>
-            <ul>
-                <li>Name: Skyler</li>
-                <li>Email: Skyler123@gmail.com</li>
-                <li>ID: 123456789 </li>
-                <li>Date Of Birth: 2020/3/12 </li>
-                <li>Phone: 0512567867 </li>
-            </ul>
-        </div>
-
+    
         <div class="gallery">
             <h2>Gallery</h2>
             <div class="gallery-images">
