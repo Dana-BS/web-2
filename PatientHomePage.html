@@ -105,7 +105,23 @@
             display: flex;
             animation: scroll 10s linear infinite;
         }
-
+        section {
+            margin: 20px auto;
+            max-width: 1300px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #8bca84;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        section h2 i {
+            margin-right: 10px;
+        }
         .table-section {
             background-color: white;
             padding: 20px;
@@ -211,9 +227,9 @@
         </ul>
     </section>
 
-    
+    <section>
+        <h2><i class="gallery"></i> Gallery</h2>
         <div class="gallery">
-            <h2>Gallery</h2>
             <div class="gallery-images">
                 <div class="scroll-container">
                     <img src="pet1.jpeg" alt="Image 1">
@@ -225,16 +241,18 @@
                     <img src="pet3.jpeg" alt="Image 3">
                     <img src="pet4.jpeg" alt="Image 4">
     
-    
                 </div>
             </div>
         </div>
+    </section>
 
         <div class="btn-container">
             <a href="book_appointment.html" class="btn">Book an Appointment</a>
         </div>
 
-        <div class="table-section">
+        <section>
+         <h2><i class="gallery"></i> Available Doctor</h2>
+          <div class="table-section">
             <table>
                 <thead>
                     <tr>
@@ -267,6 +285,7 @@
             </table>
         </div>
     </div>
+</section>
 
     <footer>
         <p>© 2025 Fur Clinic. All rights reserved.</p>
