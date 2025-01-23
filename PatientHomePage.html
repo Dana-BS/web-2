@@ -23,95 +23,42 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
         }
-
         header h1 {
             margin: 0;
             font-size: 2.5em;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
-
         header a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            position: absolute; 
-            right: 20px; 
-            top: 20px; 
+            position: absolute;
+            right: 20px;
+            top: 20px;
         }
-
         .container {
             margin: 20px auto;
             width: 90%;
             max-width: 900px;
         }
-
         .welcome-container {
             margin: 20px auto;
             max-width: 900px;
             display: flex;
             align-items: center;
         }
-        .welcome-container img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
         .welcome-label {
             font-size: 1.5em;
             font-weight: bold;
             color: #333;
         }
-
-        .patient-info, .gallery {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .gallery h2 {
-            text-align: left;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .gallery-images {
-            display: flex;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .gallery-images img {
-            width: 200px;
-            height: 150px;
-            margin-right: 10px;
-            border-radius: 10px;
-            flex-shrink: 0;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-200px * 4));
-            }
-        }
-
-        .scroll-container {
-            display: flex;
-            animation: scroll 10s linear infinite;
-        }
         section {
-            margin: 20px auto;
-            max-width: 1300px;
+            margin: 30px auto; /* Add consistent spacing between sections */
+            max-width: 900px;
             padding: 20px;
-            background-color: white;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: white;
         }
         section h2 {
             color: #8bca84;
@@ -122,73 +69,62 @@
         section h2 i {
             margin-right: 10px;
         }
-        .table-section {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+        ul {
+            padding: 0;
+            list-style: none;
         }
-
+        ul li {
+            margin-bottom: 10px;
+        }
+        .gallery-images {
+            display: flex;
+            flex-wrap: wrap; /* Prevent overflow by wrapping images */
+            gap: 15px; /* Add space between images */
+        }
+        .gallery-images img {
+            width: calc(25% - 15px); /* Ensure images resize evenly within the container */
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover; /* Prevent stretching */
+        }
+        .btn {
+            background-color: #8bca84;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #74ad6e;
+        }
+        .btn-container {
+            text-align: center; /* Center align the button */
+            margin: 30px 0; /* Add spacing for visual balance */
+        }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-
         table, th, td {
             border: 1px solid #ddd;
         }
-
         th, td {
             padding: 10px;
             text-align: left;
         }
-
         th {
             background-color: #8bca84;
             color: white;
         }
-
-        .btn {
-            background-color: #8bca84;
-            color: white;
-            padding: 8px 12px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 0.9em;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #74ad6e;
-        }
-
-        a {
-            color: #8bca84;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-        }
-
         .doctor-photo {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-        }
-
-        .btn-container {
-            text-align: right;
-            margin-bottom: 20px;
         }
         footer {
             text-align: center;
@@ -200,10 +136,6 @@
             width: 100%;
             margin-top: 20px;
         }
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-        }
     </style>
 </head>
 <body>
@@ -212,83 +144,66 @@
         <h1>Clinic</h1>
     </header>
     <div class="welcome-container">
-        <span class="welcome-label"> Welcome Skyler </span>
+        <span class="welcome-label">Welcome Skyler</span>
     </div>
-    
     <section>
-        <h2><i class="patient-info"></i> Patient Information</h2>
+        <h2><i class="fas fa-user"></i> Patient Information</h2>
         <ul>
             <li><strong>Name:</strong> Skyler</li>
             <li><strong>Email:</strong> Skyler123@gmail.com</li>
             <li><strong>ID:</strong> 123456789</li>
             <li><strong>Date Of Birth:</strong> 2020/3/12</li>
             <li><strong>Phone:</strong> 0512567867</li>
-
         </ul>
     </section>
-
     <section>
-        <h2><i class="gallery"></i> Gallery</h2>
-        <div class="gallery">
-            <div class="gallery-images">
-                <div class="scroll-container">
-                    <img src="pet1.jpeg" alt="Image 1">
-                    <img src="pet2.png" alt="Image 2">
-                    <img src="pet3.jpeg" alt="Image 3">
-                    <img src="pet4.jpeg" alt="Image 4">
-                    <img src="pet1.jpeg" alt="Image 1">
-                    <img src="pet2.png" alt="Image 2">
-                    <img src="pet3.jpeg" alt="Image 3">
-                    <img src="pet4.jpeg" alt="Image 4">
-    
-                </div>
-            </div>
+        <h2><i class="fas fa-image"></i> Gallery</h2>
+        <div class="gallery-images">
+            <img src="pet1.jpeg" alt="Image 1">
+            <img src="pet2.png" alt="Image 2">
+            <img src="pet3.jpeg" alt="Image 3">
+            <img src="pet4.jpeg" alt="Image 4">
         </div>
     </section>
-
-        <div class="btn-container">
-            <a href="book_appointment.html" class="btn">Book an Appointment</a>
-        </div>
-
-        <section>
-         <h2><i class="gallery"></i> Available Doctor</h2>
-          <div class="table-section">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>Date</th>
-                        <th>Doctor's Name</th>
-                        <th>Doctor's Photo</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>3 PM</td>
-                        <td>20/5/2025</td>
-                        <td>Dr. Sara Ahmad</td>
-                        <td><img src="doc1.jpeg" alt="Dr. Sara Ahmad" class="doctor-photo"></td>
-                        <td>Pending</td>
-                        <td><a href="#">Cancel</a></td>
-                    </tr>
-                    <tr>
-                        <td>10 AM</td>
-                        <td>14/2/2025</td>
-                        <td>Dr. Saleh Abdullah</td>
-                        <td><img src="doc2.jpeg" alt="Dr. Saleh Abdullah" class="doctor-photo"></td>
-                        <td>Confirmed</td>
-                        <td><a href="#">Cancel</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="btn-container">
+        <a href="book_appointment.html" class="btn">Book an Appointment</a>
     </div>
-</section>
-
+    <section>
+        <h2><i class="fas fa-user-md"></i> Available Doctor</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Date</th>
+                    <th>Doctor's Name</th>
+                    <th>Doctor's Photo</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3 PM</td>
+                    <td>20/5/2025</td>
+                    <td>Dr. Sara Ahmad</td>
+                    <td><img src="doc1.jpeg" alt="Dr. Sara Ahmad" class="doctor-photo"></td>
+                    <td>Pending</td>
+                    <td><a href="#">Cancel</a></td>
+                </tr>
+                <tr>
+                    <td>10 AM</td>
+                    <td>14/2/2025</td>
+                    <td>Dr. Saleh Abdullah</td>
+                    <td><img src="doc2.jpeg" alt="Dr. Saleh Abdullah" class="doctor-photo"></td>
+                    <td>Confirmed</td>
+                    <td><a href="#">Cancel</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     <footer>
         <p>© 2025 Fur Clinic. All rights reserved.</p>
     </footer>
 </body>
 </html>
+
