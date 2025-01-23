@@ -1,28 +1,21 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Homepage</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            
+            font-family: 'Roboto', sans-serif;
             background-color: #f9fff8;
             color: #333;
             margin: 0;
             padding: 0;
-        }
-        .welcome-container {
-            margin: 20px auto; 
-            max-width: 900px;
-        }
-        .welcome-label {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-            margin-right: 20px;
-            white-space: nowrap; 
         }
         header {
             background-color: #8bca84;
@@ -34,15 +27,33 @@
         }
         header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
         header a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            position: absolute; 
-            right: 20px; 
-            top: 20px; 
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .welcome-container {
+            margin: 20px auto;
+            max-width: 900px;
+            display: flex;
+            align-items: center;
+        }
+        .welcome-container img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .welcome-label {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
         }
         section {
             margin: 20px auto;
@@ -55,22 +66,34 @@
         section h2 {
             color: #8bca84;
             margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        section h2 i {
+            margin-right: 10px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            font-size: 0.95em;
         }
         table, th, td {
             border: 1px solid #ddd;
         }
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
         }
         th {
             background-color: #8bca84;
             color: white;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #f9fff8;
+        }
+        tbody tr:hover {
+            background-color: #f1f8f0;
         }
         .button {
             background-color: #8bca84;
@@ -84,13 +107,31 @@
         .button:hover {
             background-color: #74ad6e;
         }
-        a {
-            color: #8bca84;
+        .prescribe-button {
+            display: inline-block;
+            background-color: #8bca84;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
         }
-        a:hover {
-            text-decoration: underline;
+        .prescribe-button:hover {
+            background-color: #74ad6e;
+        }
+        footer {
+            text-align: center;
+            background-color: #8bca84;
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -100,22 +141,22 @@
         <h1>Clinic</h1>
     </header>
     <div class="welcome-container">
-        <label for="veterinarian-details" class="welcome-label">Welcome Dr. Sara</label>
-
-        <section id="veterinarian-details">
-            <h2>Veterinarian Information</h2>
-            <div><ul>
-                <li>Name: Sara</li>
-                <li>Email: Sara@gmail.com</li>
-                <li>ID: 483735282 </li>
-                <li>Speciality: Dermatology </li>
-                
-            </ul></div>
-        </section>
+        <img src="doc1.jpeg" alt="Dr. Sara">
+        <span class="welcome-label">Welcome Dr. Sara</span>
     </div>
-    
+
     <section>
-        <h2>Upcoming Appointments</h2>
+        <h2><i class="fas fa-user-md"></i> Veterinarian Information</h2>
+        <ul>
+            <li><strong>Name:</strong> Sara</li>
+            <li><strong>Email:</strong> Sara@gmail.com</li>
+            <li><strong>ID:</strong> 483735282</li>
+            <li><strong>Specialty:</strong> Dermatology</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-calendar-alt"></i> Upcoming Appointments</h2>
         <table>
             <thead>
                 <tr>
@@ -152,7 +193,7 @@
     </section>
 
     <section>
-        <h2>Your Patients</h2>
+        <h2><i class="fas fa-paw"></i> Your Patients</h2>
         <table>
             <thead>
                 <tr>
@@ -177,9 +218,12 @@
                     <td>N/A</td>
                     <td><a href="Prescribe.html" class="prescribe-button">Prescribe</a></td>
                 </tr>
-                
             </tbody>
         </table>
     </section>
+
+    <footer>
+        <p>© 2025 Fur Clinic. All rights reserved.</p>
+    </footer>
 </body>
 </html>
