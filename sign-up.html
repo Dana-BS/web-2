@@ -13,6 +13,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
         h1 {
@@ -28,6 +29,7 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             width: 80%;
             max-width: 500px;
+            display: none; /* Hide forms initially */
         }
 
         label {
@@ -56,38 +58,34 @@
             background-color: #74ad6e;
         }
 
-        .hidden {
-            display: none;
-        }
-
         .role-selection {
-            display: flex;
-            justify-content: space-around;
-        }
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-        .role-button {
-            background-color: #8bca84;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-        }
+.role-selection label {
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .role-button:hover {
-            background-color: #74ad6e;
-        }
+.role-selection input {
+    width: 18px;
+    height: 18px;
+    accent-color: #8bca84; 
+    margin-right: 5px;
+}
+
 
         footer {
             text-align: center;
             background-color: #8bca84;
             color: white;
             padding: 10px;
-            position: relative;
-            bottom: 0;
             width: 100%;
-            margin-top: 20px;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -96,12 +94,18 @@
 
     <!-- Role Selection -->
     <div class="role-selection">
-        <button class="role-button" onclick="showForm('patient')">Sign Up as Patient</button>
-        <button class="role-button" onclick="showForm('doctor')">Sign Up as Doctor</button>
+        <label>
+            <input type="radio" name="role" value="patient" onclick="showForm()"> Sign Up as Patient
+        </label>
+        <label>
+            <input type="radio" name="role" value="doctor" onclick="showForm()"> Sign Up as Doctor
+        </label>
     </div>
+    
+    
 
     <!-- Patient Form -->
-    <div id="patient-form" class="form-container hidden">
+    <div id="patient-form" class="form-container">
         <h2>Patient Sign-Up</h2>
         <form action="PatientHomePage.html">
             <label for="patient-first-name">First Name:</label>
@@ -118,6 +122,13 @@
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
+
+            <label for="patient-Species">Species:</label>
+            <select id="patient-Species" name="Species" required>
+                <option value="cat">Cat</option>
+                <option value="dog">dog</option>
+                <option value="bird">Bird</option>
+            </select>
             
             <label for="patient-dob">Date of Birth:</label>
             <input type="date" id="patient-dob" name="dob" required>
@@ -133,7 +144,7 @@
     </div>
 
     <!-- Doctor Form -->
-    <div id="doctor-form" class="form-container hidden">
+    <div id="doctor-form" class="form-container">
         <h2>Doctor Sign-Up</h2>
         <form action="Doctor'shomepage.html">
             <label for="doctor-first-name">First Name:</label>
@@ -167,17 +178,16 @@
     </div>
 
     <script>
-        // Function to show the appropriate form
-        function showForm(role) {
-            // Hide all forms
-            document.getElementById('patient-form').classList.add('hidden');
-            document.getElementById('doctor-form').classList.add('hidden');
+        function showForm() {
+            const selectedRole = document.querySelector('input[name="role"]:checked').value;
+            
+            document.getElementById('patient-form').style.display = 'none';
+            document.getElementById('doctor-form').style.display = 'none';
 
-            // Show the selected form
-            if (role === 'patient') {
-                document.getElementById('patient-form').classList.remove('hidden');
-            } else if (role === 'doctor') {
-                document.getElementById('doctor-form').classList.remove('hidden');
+            if (selectedRole === 'patient') {
+                document.getElementById('patient-form').style.display = 'block';
+            } else if (selectedRole === 'doctor') {
+                document.getElementById('doctor-form').style.display = 'block';
             }
         }
     </script>
@@ -187,4 +197,3 @@
     <p>© 2025 Fur Clinic. All rights reserved.</p>
 </footer>
 </html>
-
