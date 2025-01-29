@@ -22,11 +22,14 @@
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        header img {
+            width: 100px; /* Increased size */
+            height: auto;
+            margin-right: 15px;
         }
         header a {
             color: white;
@@ -189,9 +192,10 @@
 </head>
 <body>
     <header>
+        <img src="petLogo.PNG" alt="Clinic Logo">
         <a href="homePage.html">Log out</a>
-        <h1>Clinic</h1>
     </header>
+    
     <div class="welcome-container">
         <span class="welcome-label">Welcome Skyler</span>
         <img src="footprint.png" alt="Welcome Icon" class="welcome-icon">
@@ -214,13 +218,13 @@
             <div class="gallery-images">
                 <div class="scroll-container">
                     <img src="1.jpg" alt="Image 1">
-                    <img src="pet2.png" alt="Image 2">
-                    <img src="pet3.jpeg" alt="Image 3">
-                    <img src="pet4.jpeg" alt="Image 4">
-                    <img src="pet1.jpeg" alt="Image 1">
-                    <img src="pet2.png" alt="Image 2">
-                    <img src="pet3.jpeg" alt="Image 3">
-                    <img src="pet4.jpeg" alt="Image 4">
+                    <img src="skyler.jpg" alt="Image 2">
+                    <img src="2.jpeg" alt="Image 3">
+                    <img src="3.webp" alt="Image 4">
+                    <img src="1.jpg" alt="Image 1">
+                    <img src="skyler.jpg" alt="Image 2">
+                    <img src="2.jpeg" alt="Image 3">
+                    <img src="3.webp" alt="Image 4">
                 </div>
             </div>
         </div>
@@ -267,3 +271,4 @@
     </footer>
 </body>
 </html>
+ 

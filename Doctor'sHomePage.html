@@ -24,11 +24,14 @@
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        header img {
+            width: 100px; /* Increased size */
+            height: auto;
+            margin-right: 15px;
         }
         header a {
             color: white;
@@ -138,7 +141,7 @@
 <body>
     <header>
         <a href="homepage.html">Log out</a>
-        <h1>Clinic</h1>
+        <img src="petLogo.PNG" alt="Clinic Logo">
     </header>
     <div class="welcome-container">
         <img src="doc1.jpeg" alt="Dr. Sara">

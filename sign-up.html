@@ -15,12 +15,33 @@
             align-items: center;
             min-height: 100vh;
         }
-
+        header {
+            background-color: #8bca84;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        header img {
+            width: 120px; /* Increased size */
+            height: auto;
+            margin-left: 20px;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 20px;
+        }
         h1 {
             color: #8bca84;
             margin-top: 30px;
+            text-align: center;
         }
-
         .form-container {
             margin-top: 20px;
             padding: 20px;
@@ -31,13 +52,11 @@
             max-width: 500px;
             display: none; /* Hide forms initially */
         }
-
         label {
             display: block;
             margin: 10px 0 5px;
             font-weight: bold;
         }
-
         input, select, button {
             width: 100%;
             padding: 10px;
@@ -46,39 +65,33 @@
             border-radius: 5px;
             font-size: 1em;
         }
-
         button {
             background-color: #8bca84;
             color: white;
             font-weight: bold;
             cursor: pointer;
+            border: none;
         }
-
         button:hover {
             background-color: #74ad6e;
         }
-
         .role-selection {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.role-selection label {
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.role-selection input {
-    width: 18px;
-    height: 18px;
-    accent-color: #8bca84; 
-    margin-right: 5px;
-}
-
-
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .role-selection label {
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .role-selection input {
+            width: 18px;
+            height: 18px;
+            accent-color: #8bca84;
+            margin-right: 5px;
+        }
         footer {
             text-align: center;
             background-color: #8bca84;
@@ -90,6 +103,10 @@
     </style>
 </head>
 <body>
+    <header>
+        <img src="petLogo.PNG" alt="Clinic Logo">
+        <a href="homePage.html">Log out</a>
+    </header>
     <h1>Sign-Up Page</h1>
 
     <!-- Role Selection -->
@@ -101,8 +118,6 @@
             <input type="radio" name="role" value="doctor" onclick="showForm()"> Sign Up as Doctor
         </label>
     </div>
-    
-    
 
     <!-- Patient Form -->
     <div id="patient-form" class="form-container">
@@ -126,7 +141,7 @@
             <label for="patient-Species">Species:</label>
             <select id="patient-Species" name="Species" required>
                 <option value="cat">Cat</option>
-                <option value="dog">dog</option>
+                <option value="dog">Dog</option>
                 <option value="bird">Bird</option>
             </select>
             
@@ -179,7 +194,7 @@
 
     <script>
         function showForm() {
-            const selectedRole = document.querySelector('input[name="role"]:checked').value;
+            const selectedRole = document.querySelector('input[name=\"role\"]:checked').value;
             
             document.getElementById('patient-form').style.display = 'none';
             document.getElementById('doctor-form').style.display = 'none';
